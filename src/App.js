@@ -64,13 +64,12 @@ function App() {
           <ThemeProvider theme={ compTheme(isDarkTheme)}>
               <AppWrapper>
                   <GlobalStyle />
-                  <BrowserRouter>
+
                       <Header/>
                       <Routes>
                           <Route path="/" element={<HomePage/>} exact/>
-                          <Route path="/favorites" element={<FavoritesPage/>} exact/>
+                          <Route path="/favorites" element={<FavoritesPage/>}/>
                       </Routes>
-                  </BrowserRouter>
                   <ToastContainer
                   />
               </AppWrapper>

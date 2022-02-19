@@ -2,7 +2,7 @@ import axios from "axios";
 import {toast} from "react-toastify";
 
 const BASE_URL = 'https://dataservice.accuweather.com/'
-const API_KEY = 'QKRPdaxOMT5P3g16BxaxX9m5sUPdTAhF'
+const API_KEY = '0mvyKmXqh0Zr7w8ib5Fjbv2OgxfN9iG1'
 
 
 // action creators

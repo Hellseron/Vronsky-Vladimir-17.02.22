@@ -3,6 +3,7 @@ import styled from "styled-components";
 import WeatherIcon from "../../WeatherIcons";
 import moment from "moment";
 import {Row, Col} from 'antd'
+import {breakpoint} from "styled-components-breakpoint";
 
 
 const ForecastCard=({cardData, isCelsius, delay})=>{
@@ -68,6 +69,10 @@ const WeatherBlock = styled.div`
 
 const Temperature = styled.div`
   font-size: 30px;
+  ${breakpoint("xs", "sm")`
+    font-size: 24px;
+  `
+  }
 `
 
 const TemperatureTitle = styled.div`
