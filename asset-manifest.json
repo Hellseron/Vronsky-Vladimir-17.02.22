@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Vronsky-Vladimir-17.02.22/static/css/main.26bb806f.css",
-    "main.js": "/Vronsky-Vladimir-17.02.22/static/js/main.09025102.js",
+    "main.js": "/Vronsky-Vladimir-17.02.22/static/js/main.919c4a4e.js",
     "static/js/787.9871fc02.chunk.js": "/Vronsky-Vladimir-17.02.22/static/js/787.9871fc02.chunk.js",
     "static/media/city.jpg": "/Vronsky-Vladimir-17.02.22/static/media/city.5fa4bd5a67a614c0732e.jpg",
     "index.html": "/Vronsky-Vladimir-17.02.22/index.html",
     "main.26bb806f.css.map": "/Vronsky-Vladimir-17.02.22/static/css/main.26bb806f.css.map",
-    "main.09025102.js.map": "/Vronsky-Vladimir-17.02.22/static/js/main.09025102.js.map",
+    "main.919c4a4e.js.map": "/Vronsky-Vladimir-17.02.22/static/js/main.919c4a4e.js.map",
     "787.9871fc02.chunk.js.map": "/Vronsky-Vladimir-17.02.22/static/js/787.9871fc02.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.26bb806f.css",
-    "static/js/main.09025102.js"
+    "static/js/main.919c4a4e.js"
   ]
 }
