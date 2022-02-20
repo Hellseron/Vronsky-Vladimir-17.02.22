@@ -33,11 +33,11 @@ const CurrentWeatherBlock = ({cityName, weather, cityKey }) => {
                             {
                                 isFavorite ?
                                     <Tooltip title="Remove from favorites" color={'blue'} >
-                                         <FaHeart  onClick={()=> dispatch(removeFavoriteCity(cityKey))}/>
+                                         <FaHeart  onClick={(e)=>{e.preventDefault(); dispatch(removeFavoriteCity(cityKey))}}/>
                                     </Tooltip>
                                     :
                                     <Tooltip title="Add to favorites" color={'blue'} >
-                                        <FaRegHeart onClick={()=>dispatch(addFavoriteCity({cityKey, cityName}))}/>
+                                        <FaRegHeart onClick={(e)=>{e.preventDefault();dispatch(addFavoriteCity({cityKey, cityName}))}}/>
                                     </Tooltip>
 
                             }
@@ -77,6 +77,7 @@ const Wrapper = styled.div`
   border-radius: 10px;
   margin-bottom: 40px;
   transition: background-color 0.3s;
+  
 `
 
 const InfoBlock = styled.div`
@@ -121,6 +122,7 @@ const WeatherInfo = styled.div`
 `
 
 const ButtonFavorite =styled.div`
+  z-index: 999;
   color: #a80959;
   cursor: pointer;
 `

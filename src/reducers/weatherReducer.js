@@ -13,18 +13,14 @@ const initialState = {
 
 const weatherReducer = (state=initialState, action) => {
     switch (action.type) {
-        case 'SET_CURRENT_CITY_NAME' : {
+        case 'SET_CURRENT_CITY': {
             return {
                 ...state,
-                cityName: action.name
+                key: action.city.key,
+                cityName: action.city.name
             }
         }
-        case 'SET_CURRENT_CITY_KEY': {
-            return {
-                ...state,
-                key: action.id
-            }
-        }
+
         case 'SET_LOADING':
             return{
                 ...state,

@@ -11,13 +11,12 @@ import { LightTheme} from "./theme/lightTheme";
 import {HomePage, FavoritesPage} from "./pages";
 import {GlobalStyle} from "./theme/globalStyle";
 import {ToastContainer} from "react-toastify";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {
     fetchForecast,
     fetchCurrentWeather,
     fetchCurrentUserLocation,
-    setCurrentCityKey,
-    setCurrentCityName
+    setCurrentCity,
 } from "./actions";
 
 
@@ -43,8 +42,7 @@ function App() {
         navigator.geolocation.getCurrentPosition((position)=>{
             dispatch(fetchCurrentUserLocation(position.coords.latitude, position.coords.longitude))
         },()=> {
-            dispatch(setCurrentCityKey(TelAvivCityKey))
-            dispatch(setCurrentCityName("Tel Aviv"))
+            dispatch(setCurrentCity({key: TelAvivCityKey, name:"Tel Aviv" }))
         })
     },[])
 

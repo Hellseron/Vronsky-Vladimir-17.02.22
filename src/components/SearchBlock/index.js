@@ -1,7 +1,7 @@
 import React, { useEffect,useState, useMemo, useCallback} from "react";
 import styled from "styled-components";
 import {useDispatch} from "react-redux";
-import {fetchAutocomplete, setCurrentCityName, setCurrentCityKey, setSearchList } from "../../actions";
+import {fetchAutocomplete, setCurrentCity, setSearchList } from "../../actions";
 import debounce from "lodash.debounce"
 import {Input, AutoComplete} from "antd";
 
@@ -51,8 +51,7 @@ const SearchBlock = ({searchList}) => {
 
 
     const onSelect = (value, options)=>{
-        dispatch(setCurrentCityKey(options.key))
-        dispatch(setCurrentCityName(value))
+        dispatch(setCurrentCity({key: options.key, name: value}))
     }
 
 

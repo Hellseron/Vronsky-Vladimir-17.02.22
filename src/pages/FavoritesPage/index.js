@@ -1,18 +1,17 @@
 import React, {useEffect, useCallback} from "react";
 import styled from "styled-components";
+import {Row,Col} from "antd"
 import Container from "../../components/Container";
 import CurrentWeatherBlock from "../../components/CurrentWeatherBlock";
-import {Row,Col} from "antd"
+import {Link} from "react-router-dom"
 import {Spinner} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchFavoriteCitiesData} from "../../actions";
+import {fetchFavoriteCitiesData, setCurrentCity} from "../../actions";
 
 const FavoritesPage = () => {
 
     const dispatch = useDispatch()
-    const {
-        isLoading,
-    } = useSelector(({weatherReducer}) => weatherReducer)
+    const {isLoading} = useSelector(({weatherReducer}) => weatherReducer)
     const favoriteCities = useSelector(({favoritesReducer})=> favoritesReducer.favoriteCitiesList )
     const favoriteCitiesData = useSelector(({favoritesReducer})=> favoritesReducer.favoriteCitiesData )
 
@@ -25,7 +24,11 @@ const FavoritesPage = () => {
             return favoriteCitiesData.map((item, i) => {
                 return (
                     <Col key={i} xs={24} md={8} lg={12} xl={6} sm={12}>
-                        <CurrentWeatherBlock  cityKey={item.cityKey} weather={item} cityName={item.cityName}/>
+                        <Link to="/">
+                        <CardWrapper onClick={()=> dispatch(setCurrentCity({key: item.cityKey, name: item.cityName} ))}>
+                            <CurrentWeatherBlock  cityKey={item.cityKey} weather={item} cityName={item.cityName}/>
+                        </CardWrapper>
+                        </Link>
                     </Col>
                 )
             })
@@ -63,6 +66,14 @@ const Title = styled.h2`
   padding: 0;
   color: ${p=>p.theme.color.text_secondary};
   text-align: center;
+`
+
+const CardWrapper= styled.div`
+z-index: 1;
+  transition: all 0.3s;
+  &:hover {
+    transform: translateY(-5px);
+  }
 `
 
 const Text = styled.div`

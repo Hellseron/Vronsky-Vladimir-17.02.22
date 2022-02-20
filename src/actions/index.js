@@ -2,25 +2,17 @@ import axios from "axios";
 import {toast} from "react-toastify";
 
 const BASE_URL = 'https://dataservice.accuweather.com/'
-const API_KEY = '0mvyKmXqh0Zr7w8ib5Fjbv2OgxfN9iG1'
+const API_KEY = 'NDGNkY1Vo60zvJ97153GRxHBQApKuN59'
 
 
 // action creators
 
-export const setCurrentCityKey = (key) => {
+export const setCurrentCity= (city) => {
     return {
-        type: 'SET_CURRENT_CITY_KEY',
-        id: key
+        type: 'SET_CURRENT_CITY',
+        city: city
     }
 }
-
-export const setCurrentCityName = (name) => {
-    return {
-        type: 'SET_CURRENT_CITY_NAME',
-        name
-    }
-}
-
 
 export const setLoading = (load) => {
     return {
@@ -172,11 +164,10 @@ export const fetchFavoriteCitiesData = (cities) => (dispatch) => {
 export const fetchCurrentUserLocation = (lat, lng) => (dispatch) => {
     axios.get(`${BASE_URL}locations/v1/cities/geoposition/search?apikey=${API_KEY}&q=${lat},${lng}`)
         .then(({data}) => {
-            dispatch(setCurrentCityKey(data.Key))
-            dispatch(setCurrentCityName(data.EnglishName))
+            dispatch(setCurrentCity({key: data.Key, name: data.EnglishName }))
         })
         .catch(() => {
-            toast.error("Unfortunately", {
+            toast.error("Unfortunately, didn't manage to get your current location!", {
                 position: toast.POSITION.BOTTOM_CENTER
             })
         })

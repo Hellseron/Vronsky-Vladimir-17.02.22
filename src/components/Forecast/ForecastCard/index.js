@@ -47,12 +47,7 @@ const Wrapper =styled.div`
   color: ${p => p.theme.color.text};
   text-align: center;
   transition: background-color 0.3s;
- .animated{
-   -webkit-animation-duration: 0.6s;
-   animation-duration: 0.6s;
-   -webkit-animation-fill-mode: both;
-   animation-fill-mode: both;
-}
+ 
 `
 
 const Title =styled.h2`
