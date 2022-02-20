@@ -16,6 +16,7 @@ const CurrentWeatherBlock = ({cityName, weather, cityKey }) => {
     const isFavorite = favoriteCities.find((item) =>  item.cityKey === cityKey)
     const day = moment(weather.currentDate).format("dddd")
     const date = moment(weather.currentDate).format("MMM Do")
+
     return (
         <Wrapper>
             <Title>

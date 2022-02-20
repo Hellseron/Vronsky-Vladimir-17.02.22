@@ -71,7 +71,7 @@ const Temperature = styled.div`
 `
 
 const TemperatureTitle = styled.div`
-  font-size: 12px;
+  font-size: 14px;
 `
 
 const IconContainer = styled.div`
@@ -80,7 +80,7 @@ const IconContainer = styled.div`
 `
 
 const WeatherInfo = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   padding-bottom: 15px;
 `
 
