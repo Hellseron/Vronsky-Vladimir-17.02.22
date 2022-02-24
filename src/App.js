@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'animate.css'
 import {Header} from "./components";
 import {useDispatch, useSelector} from "react-redux";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import styled, {ThemeProvider} from "styled-components";
 import { DarkTheme } from "./theme/darkTheme";
 import { GlobalTheme} from "./theme/globalTheme";
@@ -62,7 +62,6 @@ function App() {
           <ThemeProvider theme={ compTheme(isDarkTheme)}>
               <AppWrapper>
                   <GlobalStyle />
-
                       <Header/>
                       <Routes>
                           <Route path="/" element={<HomePage/>} exact/>

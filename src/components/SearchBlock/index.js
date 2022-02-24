@@ -23,8 +23,10 @@ const SearchBlock = ({searchList}) => {
             return []
         }else {
             return searchList.map((item)=>{
+                const searchResult = `${item.LocalizedName}, ${item.Country.LocalizedName}`
+                console.log(searchResult)
                 return {
-                    value: item.LocalizedName,
+                    value: searchResult,
                     key: item.Key
                 }
             })
@@ -38,7 +40,7 @@ const SearchBlock = ({searchList}) => {
 
     const handleChange=useCallback(
         (e)=>{
-              const testLang = e.target.value.match(/[^a-z\s]/gi);
+              const testLang = e.target.value.match(/[^a-z\-\s]/gi);
               if(testLang){
                   setIsEng(false)
               }else{

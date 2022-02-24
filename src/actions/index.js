@@ -2,7 +2,7 @@ import axios from "axios";
 import {toast} from "react-toastify";
 
 const BASE_URL = 'https://dataservice.accuweather.com/'
-const API_KEY = '0mkG3pgKJpotuAX0AeokHhPjS6DOjmiI'
+const API_KEY = 'YWPRTx90e0eGGuxWYdJOwG0w6hCVuN1A'
 
 
 // action creators
@@ -113,7 +113,6 @@ export const fetchForecast = (cityKey, metric) => (dispatch) => {
                 position: toast.POSITION.BOTTOM_CENTER
             })
         })
-
 
 }
 

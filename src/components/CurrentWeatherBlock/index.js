@@ -30,7 +30,7 @@ const CurrentWeatherBlock = ({cityName, weather, cityKey }) => {
             <InfoBlock>
                 <CityName>
                     {cityName}
-                    <ButtonFavorite  >
+                    <ButtonFavorite >
                             {
                                 isFavorite ?
                                     <Tooltip title="Remove from favorites" color={'blue'} >
