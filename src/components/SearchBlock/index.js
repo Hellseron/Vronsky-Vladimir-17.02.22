@@ -24,7 +24,6 @@ const SearchBlock = ({searchList}) => {
         }else {
             return searchList.map((item)=>{
                 const searchResult = `${item.LocalizedName}, ${item.Country.LocalizedName}`
-                console.log(searchResult)
                 return {
                     value: searchResult,
                     key: item.Key
