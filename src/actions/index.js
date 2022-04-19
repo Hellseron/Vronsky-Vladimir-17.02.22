@@ -4,7 +4,6 @@ import {toast} from "react-toastify";
 const BASE_URL = 'https://dataservice.accuweather.com/'
 const API_KEY = 'pl9Q8wmyyVWWuZAazfjAEQ2N7amA4jPk'
 // action creators
-
 export const setCurrentCity= (city) => {
     return {
         type: 'SET_CURRENT_CITY',
