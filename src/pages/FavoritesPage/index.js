@@ -40,8 +40,10 @@ const FavoritesPage = () => {
                 Here you can check the weather of your favorite cities any time.
             </Title>
             <Container className="animate__animated animate__fadeIn">
-                {isLoading ? <Spinner/>
-                :  <>
+                {isLoading ?
+                    <Spinner/>
+                    :
+                    <>
 
 
                             {favoriteCitiesData.length>0?
